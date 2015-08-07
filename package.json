@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "karma start",
-    "build": "minify --output dist/css/style.min.css css/style.css && browserify js/app.js > js/build/all.js && node replace-css.js && minify --output dist/js/thermometer.min.js js/build/all.js"
+    "build": "minify --output src/build/css/style.min.css src/css/style.css && browserify src/js/app.js > src/build/js/all.js && node replace-css.js && minify --output dist/js/thermometer.min.js src/build/js/all.js"
   },
   "repository": {
     "type": "git",

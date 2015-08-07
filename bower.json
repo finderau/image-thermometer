@@ -28,6 +28,7 @@
   "license": "ISC",
   "ignore": [
     "**/.*",
+    "src",
     "node_modules",
     "bower_components",
     "test",
