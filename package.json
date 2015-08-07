@@ -1,6 +1,6 @@
 {
   "name": "content-thermometer",
-  "version": "1.0.0",
+  "version": "0.1.3",
   "description": "depicts image weight on a page",
   "main": "index.js",
   "directories": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "karma start",
-    "build": "minify --output src/build/css/style.min.css src/css/style.css && browserify src/js/app.js > src/build/js/all.js && node replace-css.js && minify --output dist/js/thermometer.min.js src/build/js/all.js"
+    "build": "minify --output src/build/css/style.min.css src/css/style.css && browserify src/js/app.js > src/build/js/all.js && node ./src/js/replace-css.js && minify --output dist/js/thermometer.min.js src/build/js/all.js"
   },
   "repository": {
     "type": "git",
