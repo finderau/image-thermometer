@@ -1,0 +1,38 @@
+{
+  "name": "image-thermometer",
+  "version": "0.1.0",
+  "homepage": "https://github.com/finderau/image-thermometer",
+  "authors": [
+    "David Lewis <david.lewis@hiveempire.com>",
+    "Ipek Turgul <ipek.turgul@hiveempire.com>"
+  ],
+  "description": "Shows total image weight on page with a thermometer",
+  "main": "js/build/all.js",
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.3",
+    "karma-browserify": "^4.2.1",
+    "karma-cli": "^0.1.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "phantomjs": "^1.9.17"
+  },
+  "moduleType": [
+    "node",
+    "globals"
+  ],
+  "keywords": [
+    "image weight"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "karma.conf.js",
+    "package.json"
+  ]
+}
