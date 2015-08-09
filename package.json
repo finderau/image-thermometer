@@ -7,22 +7,24 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "karma start",
-    "build": "minify --output src/build/css/style.min.css src/css/style.css && browserify src/js/app.js > src/build/js/all.js && node ./src/js/replace-css.js && minify --output dist/js/thermometer.min.js src/build/js/all.js"
+    "build": "minify --output src/build/css/style.min.css src/css/style.css && browserify src/js/app.js > src/build/js/all.js && node ./src/js/replace-css.js && minify --output dist/js/thermometer.min.js src/build/js/all.js",
+    "lint": "jshint **.js",
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/finder-dp-lewis/content-thermometer.git"
+    "url": "git+https://github.com/finderau/image-thermometer.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/finder-dp-lewis/content-thermometer/issues"
+    "url": "https://github.com/finderau/image-thermometer/issues"
   },
-  "homepage": "https://github.com/finder-dp-lewis/content-thermometer",
+  "homepage": "https://github.com/finderau/image-thermometer",
   "devDependencies": {
     "browserify": "^11.0.1",
     "jasmine-core": "^2.3.4",
+    "jshint": "^2.8.0",
     "karma": "^0.13.3",
     "karma-browserify": "^4.2.1",
     "karma-cli": "^0.1.0",
