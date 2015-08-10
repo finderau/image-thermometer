@@ -1,3 +1,4 @@
+/*global describe, it, expect */
 var calculateTests = require('../js/modules/calculate.js');
 var viewTests = require('../js/modules/view.js');
 

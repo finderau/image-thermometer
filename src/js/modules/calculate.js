@@ -1,10 +1,11 @@
+/*jslint browser: true*/
 var benchmark = 200000;
 var images;
 
 var selectArea = function (el) {
   images = document.querySelectorAll(el);
   return images;
-}
+};
 
 // Find all the image tags in a page and count up their pixels
 var countPixels = function (images) {

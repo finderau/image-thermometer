@@ -7,8 +7,9 @@
     "example": "examples"
   },
   "scripts": {
-    "build": "minify --output src/build/css/style.min.css src/css/style.css && browserify src/js/app.js > src/build/js/all.js && node ./src/js/replace-css.js && minify --output dist/js/thermometer.min.js src/build/js/all.js",
-    "lint": "jshint **.js",
+    "build": "npm run clean && minify --output dist/style.min.css src/css/style.css && browserify src/js/app.js > dist/thermometer.js && node ./src/js/replace-css.js && minify --output dist/thermometer.min.js dist/thermometer.js",
+    "clean": "rimraf dist/*",
+    "lint": "jshint ./",
     "test": "karma start"
   },
   "repository": {
@@ -30,7 +31,8 @@
     "karma-cli": "^0.1.0",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.0",
-    "phantomjs": "^1.9.17"
+    "phantomjs": "^1.9.17",
+    "rimraf": "^2.4.2"
   },
   "keywords": [
     "image weight"

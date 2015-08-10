@@ -35,7 +35,7 @@
 }
 .content-thermometer::after {
     border-radius: 50%;
-    content: '';
+    content: "";
     height: 20px;
     left: 50%;
     position: absolute;
@@ -60,7 +60,7 @@
     border-radius: 50%;
     bottom: 0;
     color: inherit;
-    content: '';
+    content: "";
     height: 10px;
     left: 50%;
     margin: 0 0 -2px -5px;
@@ -110,7 +110,7 @@
 .content-thermometer__message:after,
 .content-thermometer__message:before {  
     border: solid transparent;
-    content: '';
+    content: "";
     height: 0;
     left: 100%;
     pointer-events: none;

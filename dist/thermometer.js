@@ -1,9 +1,10 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+/*jslint browser: true*/
 var view = require('./modules/view');
 var calculate = require('./modules/calculate');
 
 // add the thermometer to the page
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   view.createDom();
 });
 
@@ -11,21 +12,23 @@ window.addEventListener('load', function () {
 calculate.selectArea('div.entry img');
   setTimeout(function () {
     // update thermometer using a percentage
-    var score = calculate.calculateScore()
+    var score = calculate.calculateScore();
     view.updateThermometer(score);
     // update message using a percentage
     view.updateMessage(score, calculate.logImages());
   }, 250);
 }, false);
 
+
 },{"./modules/calculate":2,"./modules/view":3}],2:[function(require,module,exports){
+/*jslint browser: true*/
 var benchmark = 200000;
 var images;
 
 var selectArea = function (el) {
   images = document.querySelectorAll(el);
   return images;
-}
+};
 
 // Find all the image tags in a page and count up their pixels
 var countPixels = function (images) {
@@ -75,6 +78,7 @@ module.exports = {
 };
 
 },{}],3:[function(require,module,exports){
+/*jslint browser: true*/
 var temperature, message, state = {};
 
 // Show message on click
@@ -85,10 +89,10 @@ var _registerEventHandler = function (thermometer) {
     ev.preventDefault();
 
     if (state.viewinfo === true) {
-      message.classList.remove("content-thermometer--show-info");
+      message.classList.remove('content-thermometer--show-info');
       state.viewinfo = false;
     } else {
-      message.classList.add("content-thermometer--show-info");
+      message.classList.add('content-thermometer--show-info');
       state.viewinfo = true;
     }
   });
@@ -96,14 +100,14 @@ var _registerEventHandler = function (thermometer) {
 
 var _registerTimeOut = function (thermometer_content) {
   setTimeout(function () {
-    thermometer_content.classList.add("content-thermometer--ready");
+    thermometer_content.classList.add('content-thermometer--ready');
   }, 1);
 };
 
 // Create css for thermometer
 var _createCss = function () {
   var node = document.createElement('style'),
-    styles = ".thermometer{cursor:pointer;width:50px;height:100px}#close_message{cursor:pointer;font-size:1.5em;margin-left:0.8em}.content-thermometer,.content-thermometer::after{background-color:#E0D7D6;box-shadow:0 1px 1px #CCC}.content-thermometer,.content-thermometer__message{box-sizing:border-box;top:50%;transform:translate(0,-50%)}.content-thermometer{font-family:sans-serif;font-size:12px;height:100px;opacity:0;right:1.5em;position:fixed;transition:opacity ease-out 300ms;width:10px;z-index:3000}.content-thermometer--ready{opacity:1}.content-thermometer::after{border-radius:50%;content:'';height:20px;left:50%;position:absolute;bottom:0;width:20px;margin:0 0 -2px -10px}.content-thermometer__temperature{background-color:transparent;bottom:5px;color:#0076cc;height:0;left:50%;margin:0 0 0 -2px;position:absolute;transition:height 500ms ease-out,background-color 100ms ease-out;width:4px;z-index:1}.content-thermometer__temperature::after{background-color:inherit;border-radius:50%;bottom:0;color:inherit;content:'';height:10px;left:50%;margin:0 0 -2px -5px;position:absolute;width:10px}.content-thermometer__message{background:#fff;border:1px solid #CCC;border-radius:3px;display:none;margin-right:1em;padding:.75em;position:absolute;right:100%;width:20em}.content-thermometer--show-info{display:block}.content-thermometer__bad,.content-thermometer__good{font-size:2em;float:left;margin-right:.5em}.content-thermometer__good{color:#27ae60}.content-thermometer__bad{color:#dd4b39}.content-thermometer__message h1{font-size:1.2em;margin:0 0 .5em}.content-thermometer__message h2{font-size:1.1em}.content-thermometer__message img{margin:0 .2em .2em 0}.content-thermometer__message p{font-size:1em;line-height:1.2}.content-thermometer__message:after,.content-thermometer__message:before{border:solid transparent;content:'';height:0;left:100%;pointer-events:none;position:absolute;top:50%;width:0}.content-thermometer__message:after{border-color:rgba(194,225,245,0);border-left-color:#fff;border-width:10px;margin-top:-10px}.content-thermometer__message:before{border-color:rgba(194,225,245,0);border-left-color:#CCC;border-width:11px;margin-top:-11px}";
+    styles = '.thermometer{cursor:pointer;width:50px;height:100px}#close_message{cursor:pointer;font-size:1.5em;margin-left:0.8em}.content-thermometer,.content-thermometer::after{background-color:#E0D7D6;box-shadow:0 1px 1px #CCC}.content-thermometer,.content-thermometer__message{box-sizing:border-box;top:50%;transform:translate(0,-50%)}.content-thermometer{font-family:sans-serif;font-size:12px;height:100px;opacity:0;right:1.5em;position:fixed;transition:opacity ease-out 300ms;width:10px;z-index:3000}.content-thermometer--ready{opacity:1}.content-thermometer::after{border-radius:50%;content:"";height:20px;left:50%;position:absolute;bottom:0;width:20px;margin:0 0 -2px -10px}.content-thermometer__temperature{background-color:transparent;bottom:5px;color:#0076cc;height:0;left:50%;margin:0 0 0 -2px;position:absolute;transition:height 500ms ease-out,background-color 100ms ease-out;width:4px;z-index:1}.content-thermometer__temperature::after{background-color:inherit;border-radius:50%;bottom:0;color:inherit;content:"";height:10px;left:50%;margin:0 0 -2px -5px;position:absolute;width:10px}.content-thermometer__message{background:#fff;border:1px solid #CCC;border-radius:3px;display:none;margin-right:1em;padding:.75em;position:absolute;right:100%;width:20em}.content-thermometer--show-info{display:block}.content-thermometer__bad,.content-thermometer__good{font-size:2em;float:left;margin-right:.5em}.content-thermometer__good{color:#27ae60}.content-thermometer__bad{color:#dd4b39}.content-thermometer__message h1{font-size:1.2em;margin:0 0 .5em}.content-thermometer__message h2{font-size:1.1em}.content-thermometer__message img{margin:0 .2em .2em 0}.content-thermometer__message p{font-size:1em;line-height:1.2}.content-thermometer__message:after,.content-thermometer__message:before{border:solid transparent;content:"";height:0;left:100%;pointer-events:none;position:absolute;top:50%;width:0}.content-thermometer__message:after{border-color:rgba(194,225,245,0);border-left-color:#fff;border-width:10px;margin-top:-10px}.content-thermometer__message:before{border-color:rgba(194,225,245,0);border-left-color:#CCC;border-width:11px;margin-top:-11px}';
   node.innerHTML = styles;
   document.body.appendChild(node);
 };
@@ -193,7 +197,7 @@ var updateThermometer = function (imageScorePercentage) {
 
 var updateMessage = function (imageScorePercentage, logImages) {
   message.innerHTML = createMessage(imageScorePercentage, logImages);
-  var close_message = document.getElementById("close_message");
+  var close_message = document.getElementById('close_message');
   _registerEventHandler(close_message);
 };
 

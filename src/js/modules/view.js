@@ -1,3 +1,4 @@
+/*jslint browser: true*/
 var temperature, message, state = {};
 
 // Show message on click
@@ -8,10 +9,10 @@ var _registerEventHandler = function (thermometer) {
     ev.preventDefault();
 
     if (state.viewinfo === true) {
-      message.classList.remove("content-thermometer--show-info");
+      message.classList.remove('content-thermometer--show-info');
       state.viewinfo = false;
     } else {
-      message.classList.add("content-thermometer--show-info");
+      message.classList.add('content-thermometer--show-info');
       state.viewinfo = true;
     }
   });
@@ -19,14 +20,14 @@ var _registerEventHandler = function (thermometer) {
 
 var _registerTimeOut = function (thermometer_content) {
   setTimeout(function () {
-    thermometer_content.classList.add("content-thermometer--ready");
+    thermometer_content.classList.add('content-thermometer--ready');
   }, 1);
 };
 
 // Create css for thermometer
 var _createCss = function () {
   var node = document.createElement('style'),
-    styles = "CSS STRING";
+    styles = 'CSS STRING';
   node.innerHTML = styles;
   document.body.appendChild(node);
 };
@@ -116,7 +117,7 @@ var updateThermometer = function (imageScorePercentage) {
 
 var updateMessage = function (imageScorePercentage, logImages) {
   message.innerHTML = createMessage(imageScorePercentage, logImages);
-  var close_message = document.getElementById("close_message");
+  var close_message = document.getElementById('close_message');
   _registerEventHandler(close_message);
 };
 
