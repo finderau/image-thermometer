@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('load', function () {
-calculate.selectArea('div.entry img');
+  calculate.selectArea('img');
   setTimeout(function () {
     // update thermometer using a percentage
     var score = calculate.calculateScore();
