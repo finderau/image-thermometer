@@ -10,7 +10,7 @@
     "build": "npm run clean && minify --output dist/style.min.css src/css/style.css && browserify src/js/app.js > dist/thermometer.js && node ./src/js/replace-css.js && minify --output dist/thermometer.min.js dist/thermometer.js",
     "clean": "rimraf dist/*",
     "lint": "jshint ./",
-    "test": "karma start"
+    "test": "npm run lint && karma start"
   },
   "repository": {
     "type": "git",
