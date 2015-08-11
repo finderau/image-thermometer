@@ -1,6 +1,6 @@
 /*global describe, it, expect */
-var calculateTests = require('../js/modules/calculate.js');
-var viewTests = require('../js/modules/view.js');
+var calculateTests = require('../src/js/modules/calculate.js');
+var viewTests = require('../src/js/modules/view.js');
 
 
 describe('Calculate module', function () {
